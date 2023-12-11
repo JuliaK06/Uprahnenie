@@ -28,7 +28,10 @@ public class Book implements Cloneable{
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+      Book b=(Book)super.clone();
+      b.setAuthor((Author) this.author.clone());
+      b.setPrice((Price)this.price.clone());
+      return b;
     }
 
     public String getTitle() {
